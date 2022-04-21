@@ -26,5 +26,24 @@ int main() {
 ```
 
 ## Write on files
+```cpp
+#include<iostream>
+#include<json\json.h>
+#include<fstream>
+#include<string>
+using namespace std;
+using namespace Json;
+int main() {
+	Value root;
+	string name, email , password ;
+	// create file and write on it 
+	ofstream write("C:/Users/Lime5/Desktop/Database/12.json");
+	root["name"] = "Gaber"; 
+	root["Email"] = "se505831@gmail.com";
+	write << root << "\n";
+	write.close();
+}
+```
+
 
 ## Read from files
