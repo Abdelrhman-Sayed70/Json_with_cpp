@@ -63,6 +63,8 @@ int main() {
 	if (ok) {
 		cout << "success\n";
 		cout << root.size() << "\n";
+		
+		//cout << root["name"]; or
 		name = root.get("name", "").toStyledString(); // if no attribute called name on it will return empty string 
 		email = root.get("Email", "").toStyledString(); // if no attribute called email on it will return empty string 
 		cout << "name : " << name << "\n" << "email : " << email;
