@@ -47,3 +47,28 @@ int main() {
 
 
 ## Read from files
+```cpp
+#include<iostream>
+#include<json\json.h>
+#include<fstream>
+#include<string>
+using namespace std;
+using namespace Json;
+int main() {
+	Value root; 
+	string name, email; 
+	Reader reader;
+	ifstream read ("C:/Users/Lime5/Desktop/Database/12.json");
+	bool ok = reader.parse(read , root);
+	if (ok) {
+		cout << "success\n";
+		cout << root.size() << "\n";
+		name = root.get("name", "").toStyledString(); // if no attribute called name on it will return empty string 
+		email = root.get("Email", "").toStyledString(); // if no attribute called email on it will return empty string 
+		cout << "name : " << name << "\n" << "email : " << email;
+	}
+	else {
+		cout << "fail\n";
+	}
+}
+```
