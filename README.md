@@ -74,3 +74,41 @@ int main() {
 	}
 }
 ```
+## Update on file 
+let's say that i have file :  <br />
+{ <br />
+	"quantity" : 5 ,  <br />
+	"Name" : "Gaber" <br />
+} <br />
+and i want to edit the quantity attribute only to leading that resulting json file is  <br />
+{ <br />
+	"quantity" : 6 ,  <br />
+	"Name" : "Gaber" <br />
+} <br />
+let's know how !! :
+```cpp
+#include<iostream>
+#include<json\json.h>
+#include<fstream>
+#include<string>
+#include"Base.h"
+#include"child.h"
+using namespace std;
+using namespace Json;
+int main() {
+	Value root;
+	Reader reader;
+	ifstream read("C:/Users/Lime5/Desktop/Database/test.json");
+	bool ok = reader.parse(read, root);
+	if (ok) {
+		ofstream write("C:/Users/Lime5/Desktop/Database/test.json");
+		cout << "Before : " << root;
+		int x = root["quantity"].asInt();
+		x++;
+		root["quantity"] = x;
+		write << root << "\n";
+		cout << "after" << root << "\n";
+		write.close();
+	}
+}
+```
