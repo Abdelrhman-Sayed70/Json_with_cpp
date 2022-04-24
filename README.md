@@ -80,7 +80,7 @@ let's say that i have file :  <br />
 	"quantity" : 5 ,  <br />
 	"Name" : "Gaber" <br />
 } <br />
-and i want to edit the quantity attribute only to leading that resulting json file is  <br />
+and i want to edit the quantity attribute only leading that the resulting json file is  <br />
 { <br />
 	"quantity" : 6 ,  <br />
 	"Name" : "Gaber" <br />
