@@ -91,8 +91,6 @@ let's know how !! :
 #include<json\json.h>
 #include<fstream>
 #include<string>
-#include"Base.h"
-#include"child.h"
 using namespace std;
 using namespace Json;
 int main() {
@@ -101,8 +99,8 @@ int main() {
 	ifstream read("C:/Users/Lime5/Desktop/Database/test.json");
 	bool ok = reader.parse(read, root);
 	if (ok) {
-		ofstream write("C:/Users/Lime5/Desktop/Database/test.json");
 		cout << "Before : " << root;
+		ofstream write("C:/Users/Lime5/Desktop/Database/test.json");
 		int x = root["quantity"].asInt();
 		x++;
 		root["quantity"] = x;
